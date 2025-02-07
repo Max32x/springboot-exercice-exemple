@@ -1,0 +1,11 @@
+build:
+  stage: build
+  script:
+    - echo "Phase de build"
+    - mvn clean package
+  artifacts:
+    when: always
+    name: "SpringBoot Report"
+    paths:
+      - target/*
+    expire_in: 24h
