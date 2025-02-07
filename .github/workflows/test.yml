@@ -1,0 +1,13 @@
+image: maven:3.9.9-eclipse-temurin-21
+
+stages:
+  - test
+  - deploy
+
+test:
+  stage: test
+  allow_failure: true
+  script:
+    - echo "Phase de tests"
+    - cp src/main/resources/application-ci.properties src/main/resources/application.properties
+    - mvn test
